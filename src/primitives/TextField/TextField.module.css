@@ -1,0 +1,143 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  font-family: var(--font-body);
+  width: 100%;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  min-height: var(--touch-target);
+  padding: 0 var(--space-md);
+  border-radius: var(--radius-md);
+  transition: border-color var(--motion-fast), background var(--motion-fast),
+    box-shadow var(--motion-fast);
+}
+
+/* Variants */
+.outlined {
+  background: transparent;
+  border: 1px solid var(--border-light);
+}
+
+.outlined:hover:not(.disabled):not(.readOnly) {
+  border-color: var(--text-secondary);
+}
+
+.outlined:focus-within {
+  border-color: var(--md-sys-color-primary);
+  box-shadow: 0 0 0 1px var(--md-sys-color-primary);
+}
+
+.filled {
+  background: var(--surface-elevated);
+  border: 1px solid transparent;
+  border-bottom: 1px solid var(--border-light);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.filled:hover:not(.disabled):not(.readOnly) {
+  background: var(--surface-hover);
+}
+
+.filled:focus-within {
+  border-bottom-color: var(--md-sys-color-primary);
+  box-shadow: 0 1px 0 0 var(--md-sys-color-primary);
+}
+
+/* Multiline */
+.field:has(textarea) {
+  align-items: flex-start;
+  padding-top: var(--space-sm);
+  padding-bottom: var(--space-sm);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 0;
+}
+
+textarea.input {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.affix {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-muted);
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+/* Error state */
+.error.outlined {
+  border-color: var(--error);
+}
+
+.error.outlined:focus-within {
+  border-color: var(--error);
+  box-shadow: 0 0 0 1px var(--error);
+}
+
+.error.filled {
+  border-bottom-color: var(--error);
+}
+
+.error.filled:focus-within {
+  box-shadow: 0 1px 0 0 var(--error);
+}
+
+/* Disabled state */
+.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.disabled .input {
+  cursor: not-allowed;
+}
+
+/* Read-only state */
+.readOnly {
+  border-style: dashed;
+}
+
+.readOnly .input {
+  cursor: default;
+}
+
+/* Helper / error text */
+.helper {
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--text-muted);
+  padding: 0 var(--space-2xs);
+}
+
+.helperError {
+  color: var(--error);
+}

@@ -1,0 +1,125 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  min-height: var(--touch-target);
+  padding: 0 var(--space-lg);
+  border: none;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  transition: filter var(--motion-fast), background var(--motion-fast),
+    box-shadow var(--motion-fast), border-color var(--motion-fast);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.button:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+
+.button:active:not(:disabled) {
+  filter: brightness(0.9);
+}
+
+.button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Sizes */
+.sm {
+  min-height: var(--touch-target);
+  padding: 0 var(--space-md);
+  font-size: 13px;
+}
+
+.md {
+  min-height: var(--touch-target);
+  padding: 0 var(--space-lg);
+  font-size: 14px;
+}
+
+.lg {
+  min-height: 52px;
+  padding: 0 var(--space-xl);
+  font-size: 16px;
+}
+
+/* Variants */
+.filled {
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+}
+
+.tonal {
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+}
+
+.elevated {
+  background: var(--surface-elevated);
+  color: var(--md-sys-color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.elevated:hover:not(:disabled) {
+  box-shadow: var(--shadow-md);
+}
+
+.outlined {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+.outlined:hover:not(:disabled) {
+  filter: none;
+  background: var(--surface-hover);
+  border-color: var(--border-light);
+}
+
+.text {
+  background: transparent;
+  color: var(--md-sys-color-primary);
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+}
+
+.text:hover:not(:disabled) {
+  filter: none;
+  background: var(--md-sys-color-primary-container);
+}
+
+.icon {
+  display: inline-flex;
+  font-size: 1.15em;
+  line-height: 1;
+}
+
+.label {
+  display: inline-flex;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: var(--radius-full);
+  animation: button-spin 0.7s linear infinite;
+}
+
+@keyframes button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

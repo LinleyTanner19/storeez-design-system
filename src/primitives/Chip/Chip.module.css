@@ -1,0 +1,133 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  min-height: var(--touch-target);
+  padding: 0 var(--space-md);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+  background: transparent;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition: background var(--motion-fast), border-color var(--motion-fast),
+    color var(--motion-fast);
+}
+
+.chip:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.chip:hover:not(.disabled) {
+  background: var(--surface-hover);
+  border-color: var(--text-secondary);
+}
+
+/* Sizes */
+.sm {
+  min-height: 32px;
+  padding: 0 var(--space-sm);
+  font-size: 13px;
+}
+
+.md {
+  min-height: var(--touch-target);
+  padding: 0 var(--space-md);
+}
+
+/* Variants */
+.assist,
+.input {
+  background: var(--surface-elevated);
+  border-color: var(--border);
+}
+
+.suggestion {
+  background: transparent;
+}
+
+.filter {
+  background: transparent;
+}
+
+/* Selected (filter / suggestion) */
+.selected {
+  background: var(--md-sys-color-primary-container);
+  border-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary-container);
+}
+
+.selected:hover:not(.disabled) {
+  background: var(--md-sys-color-primary-container);
+  border-color: var(--md-sys-color-primary);
+}
+
+/* Disabled */
+.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.label {
+  display: inline-block;
+}
+
+.leadingIcon {
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+  margin-left: calc(var(--space-2xs) * -1);
+}
+
+.check {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  margin-left: calc(var(--space-2xs) * -1);
+}
+
+/* Close / dismiss button */
+.close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  margin-right: calc(var(--space-xs) * -1);
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background var(--motion-fast), color var(--motion-fast);
+}
+
+.close:hover:not(:disabled) {
+  background: var(--surface);
+  color: var(--text-primary);
+}
+
+.close:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 1px;
+}
+
+.close svg {
+  width: 12px;
+  height: 12px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}

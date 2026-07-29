@@ -1,0 +1,139 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  width: 100%;
+  font-family: var(--font-body);
+}
+
+.trackArea {
+  position: relative;
+  flex: 1;
+  height: var(--touch-target);
+  display: flex;
+  align-items: center;
+}
+
+.rail {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: var(--surface-hover);
+  border: 1px solid var(--border-light);
+}
+
+.fill {
+  position: absolute;
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: var(--md-sys-color-primary);
+  pointer-events: none;
+}
+
+/* Tick marks (discrete) */
+.tick {
+  position: absolute;
+  top: 50%;
+  width: 3px;
+  height: 3px;
+  border-radius: var(--radius-full);
+  background: var(--text-muted);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.tickActive {
+  background: var(--md-sys-color-on-primary);
+}
+
+/* Native range input — transparent, drives interaction */
+.input {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: var(--touch-target);
+  margin: 0;
+  background: transparent;
+  -webkit-appearance: none;
+  appearance: none;
+  pointer-events: none;
+}
+
+/* For the two-thumb range: overlaid inputs, only thumbs are interactive */
+.inputLow,
+.inputHigh {
+  pointer-events: none;
+}
+
+.input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-full);
+  background: var(--md-sys-color-primary);
+  border: 2px solid var(--md-sys-color-on-primary);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  pointer-events: auto;
+  transition: box-shadow var(--motion-fast), transform var(--motion-fast);
+}
+
+.input::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-full);
+  background: var(--md-sys-color-primary);
+  border: 2px solid var(--md-sys-color-on-primary);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  pointer-events: auto;
+  transition: box-shadow var(--motion-fast), transform var(--motion-fast);
+}
+
+.input:hover::-webkit-slider-thumb {
+  transform: scale(1.1);
+}
+.input:hover::-moz-range-thumb {
+  transform: scale(1.1);
+}
+
+.input:active::-webkit-slider-thumb {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 8px var(--md-sys-color-primary-container);
+}
+.input:active::-moz-range-thumb {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 8px var(--md-sys-color-primary-container);
+}
+
+.input:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 3px;
+}
+.input:focus-visible::-moz-range-thumb {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 3px;
+}
+
+/* Disabled */
+.disabled {
+  opacity: 0.4;
+}
+
+.disabled .input,
+.disabled .input::-webkit-slider-thumb,
+.disabled .input::-moz-range-thumb {
+  cursor: not-allowed;
+}
+
+.valueLabel {
+  min-width: 48px;
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}

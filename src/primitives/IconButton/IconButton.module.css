@@ -1,0 +1,96 @@
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* Visual size 40px, but touch target enforced to 44px */
+  width: var(--touch-target);
+  height: var(--touch-target);
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  user-select: none;
+  transition: background var(--motion-fast), color var(--motion-fast),
+    filter var(--motion-fast), border-color var(--motion-fast);
+}
+
+.iconButton:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.iconButton:hover:not(:disabled) {
+  background: var(--surface-hover);
+}
+
+.iconButton:active:not(:disabled) {
+  filter: brightness(0.9);
+}
+
+.iconButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.icon {
+  display: inline-flex;
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* Standard: transparent */
+.standard {
+  color: var(--text-secondary);
+}
+
+.standard:hover:not(:disabled) {
+  color: var(--text-primary);
+}
+
+/* Filled: primary bg */
+.filled {
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+}
+
+.filled:hover:not(:disabled) {
+  background: var(--md-sys-color-primary);
+  filter: brightness(1.1);
+}
+
+/* Filled tonal */
+.filledtonal {
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+}
+
+.filledtonal:hover:not(:disabled) {
+  background: var(--md-sys-color-primary-container);
+  filter: brightness(1.15);
+}
+
+/* Outlined */
+.outlined {
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+.outlined:hover:not(:disabled) {
+  border-color: var(--border-light);
+  background: var(--surface-hover);
+}
+
+/* Selected toggle state */
+.selected {
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  border-color: transparent;
+}
+
+.selected:hover:not(:disabled) {
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  filter: brightness(1.1);
+}

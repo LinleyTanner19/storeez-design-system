@@ -1,0 +1,68 @@
+.snackbar {
+  position: fixed;
+  left: 50%;
+  bottom: var(--space-lg);
+  transform: translateX(-50%);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  box-sizing: border-box;
+  min-width: 280px;
+  max-width: min(560px, calc(100vw - 2 * var(--space-lg)));
+  padding: var(--space-sm) var(--space-md);
+  background: var(--surface-elevated);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.message {
+  flex: 1;
+}
+
+/* Single-line — truncate overflow */
+.single-line .message {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Multi-line — allow wrapping */
+.multi-line {
+  align-items: flex-start;
+}
+
+.multi-line .message {
+  white-space: normal;
+}
+
+/* With-action */
+.action {
+  flex-shrink: 0;
+  padding: var(--space-2xs) var(--space-xs);
+  margin: calc(-1 * var(--space-2xs)) 0;
+  border: none;
+  background: transparent;
+  color: var(--md-sys-color-primary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  transition: background var(--motion-fast);
+}
+
+.action:hover {
+  background: var(--surface-hover);
+}
+
+.action:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}

@@ -1,0 +1,108 @@
+/* Storeez Design System — Global Tokens & Base Styles */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: Inter, sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+/* == Shared tokens (NEVER vary between themes) == */
+:root {
+  --bg: #0D0D0D;
+  --surface: #131313;
+  --surface-elevated: #1A1A1A;
+  --surface-hover: #242424;
+  --border: #2A2A2A;
+  --border-light: #333333;
+  --text-primary: #F0EDE8;
+  --text-secondary: #8A8A8A;
+  --text-muted: #555555;
+
+  --space-3xs: 2px;
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 80px;
+
+  --radius-none: 0px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.5);
+  --shadow-xl: 0 12px 32px rgba(0,0,0,0.6);
+
+  --motion-fast: 150ms ease-out;
+  --motion-normal: 250ms ease-out;
+  --motion-slow: 400ms ease-out;
+
+  --success: #22A65A;
+  --warning: #E5A437;
+  --error: #D93A3A;
+  --info: #3B82F6;
+
+  --touch-target: 44px;
+  --font-body: Inter, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* == Per-theme tokens (set by ThemeProvider) == */
+[data-theme="storeez"] {
+  --md-sys-color-primary: #7B2FBE;
+  --md-sys-color-on-primary: #FFFFFF;
+  --md-sys-color-primary-container: rgba(123, 47, 190, 0.15);
+  --md-sys-color-on-primary-container: #F0EDE8;
+  --md-sys-color-secondary: #9C5CE4;
+  --md-sys-color-tertiary: #B388FF;
+  --font-display: 'Space Grotesk', sans-serif;
+  --shadow-primary: 0 4px 12px rgba(123, 47, 190, 0.3);
+}
+
+[data-theme="kumite"] {
+  --md-sys-color-primary: #CD2D26;
+  --md-sys-color-on-primary: #F0EDE8;
+  --md-sys-color-primary-container: rgba(205, 45, 38, 0.15);
+  --md-sys-color-on-primary-container: #F0EDE8;
+  --md-sys-color-secondary: #C9A84C;
+  --md-sys-color-tertiary: #8A8681;
+  --font-display: 'Bebas Neue', sans-serif;
+  --shadow-primary: 0 4px 12px rgba(205, 45, 38, 0.3);
+}
+
+/* == Typography utility classes == */
+.display-large { font: 400 57px/64px var(--font-display); }
+.display-medium { font: 400 45px/52px var(--font-display); }
+.display-small { font: 400 36px/44px var(--font-display); }
+.headline-large { font: 400 32px/40px var(--font-display); }
+.headline-medium { font: 400 28px/36px var(--font-display); }
+.headline-small { font: 600 24px/32px var(--font-display); }
+.title-large { font: 500 22px/28px var(--font-body); }
+.title-medium { font: 500 16px/24px var(--font-body); }
+.title-small { font: 500 14px/20px var(--font-body); }
+.body-large { font: 400 16px/24px var(--font-body); }
+.body-medium { font: 400 14px/20px var(--font-body); }
+.body-small { font: 400 12px/16px var(--font-body); }
+.label-large { font: 500 14px/20px var(--font-body); }
+.label-medium { font: 500 12px/16px var(--font-body); }
+.label-small { font: 500 11px/16px var(--font-body); }
+.mono { font: 400 14px/20px var(--font-mono); }
+
+/* == Scrollbar (lab only) == */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }

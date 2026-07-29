@@ -1,0 +1,93 @@
+.fab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  border: none;
+  border-radius: var(--radius-lg);
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  box-shadow: var(--shadow-primary);
+  cursor: pointer;
+  user-select: none;
+  transition: filter var(--motion-fast), box-shadow var(--motion-fast);
+}
+
+.fab:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 3px;
+}
+
+.fab:hover:not(:disabled) {
+  filter: brightness(1.1);
+  box-shadow: var(--shadow-md);
+}
+
+.fab:active:not(:disabled) {
+  filter: brightness(0.9);
+}
+
+.fab:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Regular: 56px circle */
+.regular {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+}
+
+/* Small: 40px (touch area extended to 44px via padding-free min but keep hit target) */
+.small {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+}
+
+/* Large: 96px circle */
+.large {
+  width: 96px;
+  height: 96px;
+  border-radius: var(--radius-xl);
+}
+
+/* Extended: auto-width with icon + label */
+.extended {
+  min-height: var(--touch-target);
+  height: 56px;
+  min-width: 80px;
+  padding: 0 var(--space-lg);
+  border-radius: var(--radius-lg);
+}
+
+.icon {
+  display: inline-flex;
+  line-height: 1;
+}
+
+.regular .icon {
+  font-size: 24px;
+}
+
+.small .icon {
+  font-size: 20px;
+}
+
+.large .icon {
+  font-size: 36px;
+}
+
+.extended .icon {
+  font-size: 20px;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1;
+  white-space: nowrap;
+}

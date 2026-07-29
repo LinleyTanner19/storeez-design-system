@@ -1,0 +1,48 @@
+.section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+}
+.sectionTitle {
+  font: 400 22px/28px var(--font-display);
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+  letter-spacing: 0.3px;
+}
+.sectionDesc {
+  font: 400 13px/18px var(--font-body);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+}
+.sectionContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.groupLabel {
+  font: 500 12px/16px var(--font-body);
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--border);
+}
+
+.variantRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+.variantLabel {
+  font: 400 11px/14px var(--font-mono);
+  color: var(--text-muted);
+}
+.variantContent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  align-items: center;
+}

@@ -1,0 +1,75 @@
+/* ---- Linear ---- */
+.linear {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 4px;
+  background: var(--surface-elevated);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.bar {
+  display: block;
+  height: 100%;
+  background: var(--md-sys-color-primary);
+  border-radius: var(--radius-full);
+  transition: width var(--motion-normal);
+}
+
+/* Indeterminate animated stripes */
+.stripes {
+  width: 40%;
+  position: absolute;
+  left: 0;
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--md-sys-color-primary) 50%,
+    transparent 100%
+  );
+  animation: slide 1.4s ease-in-out infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(350%);
+  }
+}
+
+/* ---- Circular ---- */
+.circularWrap {
+  display: inline-flex;
+  width: 48px;
+  height: 48px;
+}
+
+.circular {
+  transform: rotate(-90deg);
+}
+
+.track {
+  stroke: var(--surface-elevated);
+}
+
+.indicator {
+  stroke: var(--md-sys-color-primary);
+  transition: stroke-dashoffset var(--motion-normal);
+}
+
+/* Indeterminate circular spin */
+.indeterminate .circular {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(270deg);
+  }
+}

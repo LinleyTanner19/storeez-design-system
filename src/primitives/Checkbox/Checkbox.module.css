@@ -1,0 +1,99 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-body);
+  cursor: pointer;
+  user-select: none;
+  min-height: var(--touch-target);
+}
+
+.rootDisabled {
+  cursor: not-allowed;
+}
+
+/* 44px touch target wrapper */
+.control {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--touch-target);
+  height: var(--touch-target);
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  transition: background var(--motion-fast);
+}
+
+.input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: inherit;
+}
+
+.box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--text-secondary);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  transition: background var(--motion-fast), border-color var(--motion-fast);
+  pointer-events: none;
+}
+
+/* Hover / focus via the 44px control */
+.root:hover:not(.rootDisabled) .control {
+  background: var(--surface-hover);
+}
+
+.input:focus-visible + .box {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.active {
+  background: var(--md-sys-color-primary);
+  border-color: var(--md-sys-color-primary);
+}
+
+.error {
+  border-color: var(--error);
+}
+
+.active.error {
+  background: var(--error);
+  border-color: var(--error);
+}
+
+.disabled {
+  opacity: 0.4;
+}
+
+.mark {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: var(--md-sys-color-on-primary);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0;
+  transition: opacity var(--motion-fast);
+}
+
+.active .mark {
+  opacity: 1;
+}
+
+.label {
+  font-size: 14px;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
