@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  /* Visual size 40px, but touch target enforced to 44px */
+  /* Visual size 40px, but touch target enforced to 44px in both densities */
   width: var(--touch-target);
   height: var(--touch-target);
   padding: 0;
@@ -12,31 +12,44 @@
   color: var(--text-primary);
   cursor: pointer;
   user-select: none;
+  position: relative;
+  overflow: hidden;
   transition: background var(--motion-fast), color var(--motion-fast),
-    filter var(--motion-fast), border-color var(--motion-fast);
+    border-color var(--motion-fast), opacity var(--motion-fast);
 }
+
+/* --- MD3 state layer (CORRECTION 7) -----------------------------------
+   One rule for every variant. Because the overlay is `currentColor`, the
+   tonal variant no longer washes out the way brightness(1.15) did. */
+.iconButton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  transition: opacity var(--motion-fast);
+}
+
+.iconButton:hover:not(:disabled)::after         { opacity: var(--state-hover); }
+.iconButton:focus-visible:not(:disabled)::after { opacity: var(--state-focus); }
+.iconButton:active:not(:disabled)::after        { opacity: var(--state-pressed); }
+.iconButton[data-dragged]::after                { opacity: var(--state-dragged); }
 
 .iconButton:focus-visible {
   outline: 2px solid var(--md-sys-color-primary);
   outline-offset: 2px;
 }
 
-.iconButton:hover:not(:disabled) {
-  background: var(--surface-hover);
-}
-
-.iconButton:active:not(:disabled) {
-  filter: brightness(0.9);
-}
-
+/* MD3 disabled is 38%, not 40% */
 .iconButton:disabled {
-  opacity: 0.4;
+  opacity: var(--state-disabled);
   cursor: not-allowed;
 }
 
 .icon {
   display: inline-flex;
-  font-size: 20px;
   line-height: 1;
 }
 
@@ -55,20 +68,10 @@
   color: var(--md-sys-color-on-primary);
 }
 
-.filled:hover:not(:disabled) {
-  background: var(--md-sys-color-primary);
-  filter: brightness(1.1);
-}
-
 /* Filled tonal */
 .filledtonal {
   background: var(--md-sys-color-primary-container);
   color: var(--md-sys-color-on-primary-container);
-}
-
-.filledtonal:hover:not(:disabled) {
-  background: var(--md-sys-color-primary-container);
-  filter: brightness(1.15);
 }
 
 /* Outlined */
@@ -79,7 +82,6 @@
 
 .outlined:hover:not(:disabled) {
   border-color: var(--border-light);
-  background: var(--surface-hover);
 }
 
 /* Selected toggle state */
@@ -89,8 +91,4 @@
   border-color: transparent;
 }
 
-.selected:hover:not(:disabled) {
-  background: var(--md-sys-color-primary);
-  color: var(--md-sys-color-on-primary);
-  filter: brightness(1.1);
-}
+/* No per-variant hover rules below this line — the state layer covers them. */

@@ -10,8 +10,26 @@
   box-shadow: var(--shadow-primary);
   cursor: pointer;
   user-select: none;
-  transition: filter var(--motion-fast), box-shadow var(--motion-fast);
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow var(--motion-fast), opacity var(--motion-fast);
 }
+
+/* MD3 state layer (CORRECTION 7) — replaces filter: brightness() */
+.fab::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  transition: opacity var(--motion-fast);
+}
+
+.fab:hover:not(:disabled)::after         { opacity: var(--state-hover); }
+.fab:focus-visible:not(:disabled)::after { opacity: var(--state-focus); }
+.fab:active:not(:disabled)::after        { opacity: var(--state-pressed); }
 
 .fab:focus-visible {
   outline: 2px solid var(--md-sys-color-primary);
@@ -19,16 +37,11 @@
 }
 
 .fab:hover:not(:disabled) {
-  filter: brightness(1.1);
-  box-shadow: var(--shadow-md);
-}
-
-.fab:active:not(:disabled) {
-  filter: brightness(0.9);
+  box-shadow: var(--elevation-2);
 }
 
 .fab:disabled {
-  opacity: 0.4;
+  opacity: var(--state-disabled);
   cursor: not-allowed;
   box-shadow: none;
 }

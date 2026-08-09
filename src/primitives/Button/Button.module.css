@@ -7,51 +7,71 @@
   padding: 0 var(--space-lg);
   border: none;
   border-radius: var(--radius-full);
-  font-family: var(--font-body);
+  /* Label roles use --font-title (Archivo), not the body font (C6) */
+  font-family: var(--font-title);
   font-weight: 500;
   line-height: 1;
   cursor: pointer;
   white-space: nowrap;
   user-select: none;
-  transition: filter var(--motion-fast), background var(--motion-fast),
-    box-shadow var(--motion-fast), border-color var(--motion-fast);
+  /* State layer needs a positioning context and a clip */
+  position: relative;
+  overflow: hidden;
+  transition: background var(--motion-fast), box-shadow var(--motion-fast),
+    border-color var(--motion-fast), opacity var(--motion-fast);
 }
+
+/* --- MD3 state layer (CORRECTION 7) -----------------------------------
+   A translucent overlay of the CONTENT colour at a fixed opacity, replacing
+   `filter: brightness()`. One rule covers every variant, and tonal buttons
+   stop washing out. */
+.button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  transition: opacity var(--motion-fast);
+}
+
+.button:hover:not(:disabled)::after         { opacity: var(--state-hover); }
+.button:focus-visible:not(:disabled)::after { opacity: var(--state-focus); }
+.button:active:not(:disabled)::after        { opacity: var(--state-pressed); }
+.button[data-dragged]::after                { opacity: var(--state-dragged); }
 
 .button:focus-visible {
   outline: 2px solid var(--md-sys-color-primary);
   outline-offset: 2px;
 }
 
-.button:hover:not(:disabled) {
-  filter: brightness(1.1);
-}
-
-.button:active:not(:disabled) {
-  filter: brightness(0.9);
-}
-
+/* MD3 disabled is 38%, not 40% */
 .button:disabled {
-  opacity: 0.4;
+  opacity: var(--state-disabled);
   cursor: not-allowed;
 }
 
-/* Sizes */
+/* Sizes — label roles only; 13px was an invented step between roles (C6) */
 .sm {
   min-height: var(--touch-target);
   padding: 0 var(--space-md);
-  font-size: 13px;
+  font-size: 12px;      /* label-medium */
+  letter-spacing: 0.5px;
 }
 
 .md {
   min-height: var(--touch-target);
   padding: 0 var(--space-lg);
-  font-size: 14px;
+  font-size: 14px;      /* label-large */
+  letter-spacing: 0.1px;
 }
 
 .lg {
   min-height: 52px;
   padding: 0 var(--space-xl);
-  font-size: 16px;
+  font-size: 16px;      /* title-medium */
+  letter-spacing: 0.15px;
 }
 
 /* Variants */
@@ -82,8 +102,6 @@
 }
 
 .outlined:hover:not(:disabled) {
-  filter: none;
-  background: var(--surface-hover);
   border-color: var(--border-light);
 }
 
@@ -94,10 +112,7 @@
   padding-right: var(--space-md);
 }
 
-.text:hover:not(:disabled) {
-  filter: none;
-  background: var(--md-sys-color-primary-container);
-}
+/* .text needs no per-variant hover rule — the state layer covers it. */
 
 .icon {
   display: inline-flex;

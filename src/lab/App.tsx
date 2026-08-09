@@ -169,8 +169,8 @@ function InputsPanel() {
       <div className="comp-group">
         <span className="comp-group-title">Text Field</span>
         <div className="input-grid">
-          <TextField variant="filled" label="Filled" placeholder="Enter name" value={text} onChange={setText} />
-          <TextField variant="outlined" label="Outlined" placeholder="Search..." value={text} onChange={setText} />
+          <TextField variant="filled" label="Filled" placeholder="Enter name" value={text} onChange={(e) => setText(e.target.value)} />
+          <TextField variant="outlined" label="Outlined" placeholder="Search..." value={text} onChange={(e) => setText(e.target.value)} />
           <TextField variant="filled" label="With error" value="bad@input" error errorMessage="Invalid email format" />
           <TextField variant="filled" label="Multi-line" multiline placeholder="Write a message..." />
         </div>
@@ -247,10 +247,10 @@ function DisplayPanel() {
       <div className="comp-group">
         <span className="comp-group-title">Tooltip</span>
         <div className="demo-row">
-          <Tooltip content="Record: 15-3-0" position="top">
+          <Tooltip label="Record: 15-3-0" position="top">
             <span className="body-medium" style={{ cursor: 'pointer', borderBottom: '1px dashed var(--text-muted)' }}>Hover me</span>
           </Tooltip>
-          <Tooltip content="Featherweight · 66kg" position="bottom">
+          <Tooltip label="Featherweight · 66kg" position="bottom">
             <span className="body-medium" style={{ cursor: 'pointer', borderBottom: '1px dashed var(--text-muted)' }}>Hover bottom</span>
           </Tooltip>
         </div>
