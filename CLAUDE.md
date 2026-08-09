@@ -1,14 +1,13 @@
 # CLAUDE.md — Storeez Design System
 
-The **design gate** for all Storeez projects. Full rules in AGENTS.md — read it first. Key points:
+You are generating UI for the Storeez Design System. Read `AGENTS.md` for the full hard-rule list — it is binding. The short version:
 
-- **Variable identity:** `data-theme` × `data-mode`. Storeez base = mint `#8DF2B0`/forest `#253F2F` + Schibsted Grotesk. 5 themes × 2 modes.
-- **Tokens only** (CSS vars / DTCG). Text uses `--md-sys-color-primary-text`, never raw fill.
-- **No emoji.** Lucide only, reserved icons (sparkles=AI, wifi-off=offline, …).
-- **≥4 of 8 states** per component. JetBrains Mono for all data. 44px targets. WCAG AA.
-- **Honest AI:** what/why/confidence/override/fallibility on every AI output.
-- **Claude Design delivery:** briefs in vault `wiki/storeez-ds/claude-design-brief-*.md` (v2→v3→v4→enhancement); output → `~/Downloads/export/storeez-design-system/` → copied to `wiki/storeez-ds/artefacts/claude-design-export/` → components extracted to `src/`. The lab is the spec.
-- **Agents:** L1 issues-only, L2 mechanical PRs, L3 auto-merge only low-risk gated. Never push to main.
-- **Hermes** runs the pipeline: `storeez-ds-build`, `storeez-to-figma`, `storeez-react`, `storeez-artefact-standards` skills; Figma bridge naming `STOREZ/Level/Name/Variant`.
+- Tokens only (`var(--*)`), never raw hex. Coloured text uses `--md-sys-color-primary-text`, never the raw fill.
+- ≥4 of the 8 universal states per component (Loading, Empty, Happy, Error, Offline, Success, AI Thinking, AI Empty).
+- Lucide only, no emoji. 44px targets. 11px type floor. WCAG AA.
+- Honest AI on every AI output: what / why / confidence bar / override / "AI can be wrong" disclaimer. Mono ref codes on errors.
+- Resolve components from `registry.json`; compose, don't reinvent. Copy the canonical example in each component's `aiPrompt`.
+- Brand switching is `data-theme` × `data-mode` on the root — structure never changes, only seed colour + display font.
+- React / React Native. MD3 conventions resolve any ambiguity.
 
-Vault: `~/Documents/storeez/wiki/storeez-ds/` · Mirror: `github.com/LinleyTanner19/storeez-design-system`.
+Read order: `readme.md` → `AGENTS.md` → `registry.json` → `tokens.json` → the component's `.prompt.md`.

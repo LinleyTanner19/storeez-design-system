@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://storeez.studio/schemas/storeez-component.schema.json",
+  "title": "StoreezComponent",
+  "description": "Canonical contract for every Storeez DS component. JSON for MCP (deterministic), Markdown for LLM (judgment). Prose lives in prompt.md, never here.",
+  "type": "object",
+  "required": ["id", "description", "category", "variants", "states", "aiPrompt", "mediums", "tokens", "a11y"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$", "description": "Unique kebab-case id, e.g. 'icon-button'. Used by AI generation." },
+    "description": { "type": "string", "description": "Semantic description: WHAT it does and HOW it combines. Intent, not specs." },
+    "category": { "enum": ["core", "actions", "inputs", "display", "lists", "navigation", "overlays", "ai"] },
+    "variants": { "type": "array", "items": { "type": "string" } },
+    "sizes": { "type": "array", "items": { "type": "string" } },
+    "states": {
+      "type": "array",
+      "items": { "enum": ["loading", "empty", "happy", "error", "offline", "success", "ai-thinking", "ai-empty"] },
+      "minItems": 4,
+      "description": "≥4 of the 8 universal states. Non-negotiable."
+    },
+    "props": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "type"],
+        "properties": {
+          "name": { "type": "string" },
+          "type": { "type": "string", "description": "TS type, e.g. 'ButtonVariant'" },
+          "default": { "type": ["string", "number", "boolean", "null"] },
+          "options": { "type": "array", "items": { "type": "string" }, "description": "For union types" }
+        }
+      }
+    },
+    "aiPrompt": { "type": "string", "description": "When to use, when NOT to use, and how to compose. The reasoning layer." },
+    "mediums": { "type": "array", "items": { "enum": ["pwa", "web", "native", "email", "text"] } },
+    "tokens": { "type": "array", "items": { "type": "string" }, "description": "CSS var / DTCG token dependencies. Never raw values." },
+    "a11y": {
+      "type": "object",
+      "required": ["wcag", "keyboard", "touchTarget"],
+      "properties": {
+        "wcag": { "type": "string", "description": "AA compliance notes" },
+        "keyboard": { "type": "boolean" },
+        "touchTarget": { "type": "number", "minimum": 44 }
+      }
+    },
+    "offline": {
+      "type": "object",
+      "properties": {
+        "behavior": { "enum": ["cached", "disabled", "fallback"] },
+        "note": { "type": "string" }
+      }
+    },
+    "usage": { "type": "array", "items": { "type": "string" }, "description": "Curated example snippets agents copy. LLMs copy examples — ship good ones." },
+    "frontMatter": {
+      "type": "object",
+      "properties": {
+        "uses": { "type": "string" },
+        "avoids": { "type": "string" }
+      }
+    }
+  }
+}

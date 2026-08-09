@@ -1,0 +1,21 @@
+# Storeez Design System
+
+> Dark-native, MD3-derived, multi-brand design system (5 brands × 2 modes: storeez, kumite, ilot, travelz, violet — dark/light). AI-native: Honest AI contract, 8 universal states, Lucide-only iconography, machine-readable component registry.
+
+## Read first
+- readme.md: design guide, brand matrix, content + visual foundations, locked stack decisions
+- AGENTS.md: hard generation rules (binding, CI-enforced)
+- CLAUDE.md: agent-native summary of the rules
+- registry.json: component registry — 34 components with variants, states, tokens, aiPrompt
+- storeez-component.schema.json: JSON Schema (draft 2020-12) every component.json validates against
+- tokens.json: DTCG token source of truth (global → semantic → component tiers)
+- styles.css: compiled CSS custom properties (the token closure)
+- SKILL.md: the storeez-design agent skill
+- component-lab.dc.html: the living spec — sections 01–20 covering tokens, components, AI patterns, agentic primitives, contracts, governance
+- agentic-layer.html: the machine-readable metadata layer rendered — schema, AGENTS.md, registry, front-matter, trust levels
+
+## Rules that trip models up
+- --md-sys-color-primary is a FILL; text uses --md-sys-color-primary-text
+- No emoji anywhere. No raw hex in component code. No gradients or glassmorphism.
+- Never transition a colour property bound to an --md-sys-color-* token.
+- Every AI output carries what/why/confidence/override/disclaimer.
