@@ -1,0 +1,38 @@
+{
+  "id": "SearchBar",
+  "description": "Search input with optional filter chips. Enter submits; chips toggle filters. AI-empty echoes the query + 3 alternatives.",
+  "category": "navigation",
+  "variants": [
+    "default"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "empty",
+    "offline"
+  ],
+  "props": [],
+  "aiPrompt": "Intent-prediction autocomplete when AI available. Clear affordance always visible.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--surface-elevated",
+    "--radius-full"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44,
+    "label": "aria-label required"
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

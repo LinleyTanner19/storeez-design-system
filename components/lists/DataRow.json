@@ -1,0 +1,39 @@
+{
+  "id": "DataRow",
+  "description": "---",
+  "category": "lists",
+  "variants": [
+    "default",
+    "mono",
+    "copyable"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "empty",
+    "offline"
+  ],
+  "props": [],
+  "aiPrompt": "Label\u2013value pair; values mono when numeric or an ID. Copyable shows affordance on hover.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--font-mono",
+    "--border"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

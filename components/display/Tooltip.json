@@ -1,0 +1,40 @@
+{
+  "id": "Tooltip",
+  "description": "---",
+  "category": "display",
+  "variants": [
+    "top",
+    "bottom",
+    "start",
+    "end"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "empty"
+  ],
+  "props": [],
+  "aiPrompt": "Labels icon-only controls; never the only carrier of required info \u2014 touch has no hover.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--surface-hover",
+    "--radius-xs",
+    "--shadow-md"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

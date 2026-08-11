@@ -1,0 +1,38 @@
+{
+  "id": "Checkbox",
+  "description": "---",
+  "category": "inputs",
+  "variants": [
+    "unselected",
+    "selected",
+    "indeterminate"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "success"
+  ],
+  "props": [],
+  "aiPrompt": "Multiple options only \u2014 a single binary choice is a Switch, never a lone checkbox.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--md-sys-color-primary",
+    "--radius-xs"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

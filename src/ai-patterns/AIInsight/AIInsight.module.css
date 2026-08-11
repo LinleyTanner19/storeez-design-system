@@ -1,0 +1,64 @@
+.insight {
+  padding: 12px 16px;
+  background: var(--md-sys-color-primary-container);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.spark {
+  color: var(--md-sys-color-primary-text);
+  font-size: 13px;
+  line-height: 1;
+}
+
+.label {
+  font: var(--type-label-small);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--md-sys-color-primary-text);
+}
+
+.body {
+  font: 400 12px/17px var(--font-body);
+  letter-spacing: 0.4px;
+  color: var(--md-sys-color-on-primary-container);
+  text-wrap: pretty;
+}
+
+.footer {
+  font: 400 11px/15px var(--font-mono);
+  color: var(--text-muted);
+}
+
+.confBar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.track {
+  flex: 1;
+  height: 3px;
+  border-radius: var(--radius-full);
+  background: var(--surface-hover);
+  overflow: hidden;
+}
+
+.fill {
+  display: block;
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width var(--motion-normal) var(--ease-standard);
+}
+
+.value {
+  font: 500 11px/15px var(--font-mono);
+  flex-shrink: 0;
+}

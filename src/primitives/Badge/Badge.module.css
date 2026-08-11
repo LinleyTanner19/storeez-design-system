@@ -11,7 +11,7 @@
   font-family: var(--font-body);
   font-weight: 600;
   line-height: 1;
-  color: #fff;
+  color: var(--text-primary);
   border-radius: var(--radius-full);
   user-select: none;
 }
@@ -76,5 +76,5 @@
 
 .warning {
   background: var(--warning);
-  color: #0d0d0d;
+  color: var(--text-primary);
 }

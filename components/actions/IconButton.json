@@ -1,0 +1,41 @@
+{
+  "id": "IconButton",
+  "description": "---",
+  "category": "actions",
+  "variants": [
+    "standard",
+    "filled",
+    "filled-tonal",
+    "outlined",
+    "toggle"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "success"
+  ],
+  "props": [],
+  "aiPrompt": "Icon-only limited to house/search/close/back, always with aria-label. 44px target regardless of glyph size.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--md-sys-color-primary-text",
+    "--surface-hover",
+    "--radius-full"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

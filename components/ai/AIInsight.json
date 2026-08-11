@@ -1,0 +1,38 @@
+{
+  "id": "AIInsight",
+  "description": "The AI slot \u2014 tinted footer on a card. Enforces Honest AI: what/why/confidence/override/disclaimer. Never silently rewrites content; errors state nothing was saved.",
+  "category": "ai",
+  "variants": [
+    "default",
+    "tinted"
+  ],
+  "sizes": [],
+  "states": [
+    "happy",
+    "ai-thinking",
+    "ai-empty",
+    "offline",
+    "error"
+  ],
+  "props": [],
+  "aiPrompt": "The AI slot \u2014 tinted footer. Enforces Honest AI: what/why/confidence/override/disclaimer. Never silently rewrites content; errors carry a mono ref code.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--md-sys-color-primary-container",
+    "--md-sys-color-on-primary-container"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 0
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

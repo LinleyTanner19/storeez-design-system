@@ -1,0 +1,50 @@
+{
+  "id": "Button",
+  "description": "---",
+  "category": "core",
+  "variants": [
+    "filled",
+    "tonal",
+    "elevated",
+    "outlined",
+    "text"
+  ],
+  "sizes": [
+    "sm",
+    "md",
+    "lg"
+  ],
+  "states": [
+    "loading",
+    "empty",
+    "happy",
+    "error",
+    "offline",
+    "success",
+    "ai-thinking",
+    "ai-empty"
+  ],
+  "props": [],
+  "aiPrompt": "Primary action of any flow. Filled = the single primary CTA of a view; never stack two filled buttons. Loading swaps icon for spinner.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--md-sys-color-primary",
+    "--md-sys-color-primary-text",
+    "--radius-full",
+    "--touch-target"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "Divider",
+  "description": "---",
+  "category": "display",
+  "variants": [
+    "horizontal",
+    "vertical",
+    "inset",
+    "with-label"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "success"
+  ],
+  "props": [],
+  "aiPrompt": "Prefer container borders; divider only inside continuous lists.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--border"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

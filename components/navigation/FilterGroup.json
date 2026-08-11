@@ -1,0 +1,36 @@
+{
+  "id": "FilterGroup",
+  "description": "FilterGroup component",
+  "category": "navigation",
+  "variants": [
+    "default"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "empty"
+  ],
+  "props": [],
+  "aiPrompt": "Selected = check prefix + primary container. Always offer clear-all.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--md-sys-color-primary-container",
+    "--radius-xs"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

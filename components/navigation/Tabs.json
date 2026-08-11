@@ -1,0 +1,38 @@
+{
+  "id": "Tabs",
+  "description": "Primary/secondary tab bar with badges. aria-selected + role=tablist. Active underline uses primary fill; badges never semantic-red.",
+  "category": "navigation",
+  "variants": [
+    "primary",
+    "secondary"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "empty"
+  ],
+  "props": [],
+  "aiPrompt": "Primary for top-level views, secondary for sub-views.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--md-sys-color-primary-text",
+    "--border"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44,
+    "roles": "tablist/tab"
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

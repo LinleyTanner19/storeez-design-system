@@ -1,2 +1,3 @@
-export { Card } from './Card';
-export type { CardProps, CardVariant } from './Card';
+export { SCard, default } from '../SCard';
+export { SCard as Card } from '../SCard';
+export type { SCardProps, SCardVariant } from '../SCard';

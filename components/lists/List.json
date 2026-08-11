@@ -1,0 +1,39 @@
+{
+  "id": "List",
+  "description": "List component",
+  "category": "lists",
+  "variants": [
+    "1-line",
+    "2-line",
+    "3-line"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "empty",
+    "offline"
+  ],
+  "props": [],
+  "aiPrompt": "Leading avatar/icon; trailing switch/checkbox/icon. Row 56 comfortable / 40 compact.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--row-height",
+    "--touch-target"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "Slider",
+  "description": "---",
+  "category": "inputs",
+  "variants": [
+    "continuous",
+    "discrete",
+    "range"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "success"
+  ],
+  "props": [],
+  "aiPrompt": "Bounded numeric input; current value shown in mono beside the track.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--md-sys-color-primary",
+    "--surface-hover"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

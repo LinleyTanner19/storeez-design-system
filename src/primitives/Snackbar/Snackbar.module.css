@@ -48,7 +48,7 @@
   margin: calc(-1 * var(--space-2xs)) 0;
   border: none;
   background: transparent;
-  color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-primary-text);
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 600;

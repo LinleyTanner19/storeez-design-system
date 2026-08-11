@@ -1,0 +1,39 @@
+{
+  "id": "Snackbar",
+  "description": "---",
+  "category": "display",
+  "variants": [
+    "single-line",
+    "multi-line",
+    "with-action"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "success"
+  ],
+  "props": [],
+  "aiPrompt": "One action max. Errors that lose data use Dialog. Success carries circle-check-big + next step.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--surface-elevated",
+    "--radius-sm",
+    "--shadow-lg"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

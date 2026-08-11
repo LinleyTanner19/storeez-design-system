@@ -1,0 +1,42 @@
+{
+  "id": "TextField",
+  "description": "---",
+  "category": "core",
+  "variants": [
+    "filled",
+    "outlined",
+    "multiline"
+  ],
+  "sizes": [],
+  "states": [
+    "happy",
+    "default",
+    "focus",
+    "error",
+    "disabled",
+    "read-only"
+  ],
+  "props": [],
+  "aiPrompt": "Labels always visible, never placeholder-only. Errors explain how to fix. IDs/codes in mono. AI assist proposes a diff, never silently rewrites.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--border-light",
+    "--md-sys-color-primary",
+    "--error",
+    "--radius-sm"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

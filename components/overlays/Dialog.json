@@ -1,0 +1,39 @@
+{
+  "id": "Dialog",
+  "description": "Modal with backdrop scrim, tone support (error/warning/success), icon. Error dialogs state nothing was saved + mono ref code. aria-modal + backdrop-click close.",
+  "category": "overlays",
+  "variants": [
+    "default",
+    "tone"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "success"
+  ],
+  "props": [],
+  "aiPrompt": "Blocking decisions only; destructive confirm never default-focused.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--surface-elevated",
+    "--radius-lg",
+    "--shadow-xl"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44,
+    "modal": "aria-modal"
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

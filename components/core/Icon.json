@@ -1,0 +1,42 @@
+{
+  "id": "Icon",
+  "description": "Icon component",
+  "category": "core",
+  "variants": [
+    "line"
+  ],
+  "sizes": [
+    "sm",
+    "md",
+    "lg",
+    "xl"
+  ],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "disabled"
+  ],
+  "props": [],
+  "aiPrompt": "Icon slot for any component. Always pair with text; never decorative-only without aria-hidden. Use the reserved icon for the reserved meaning \u2014 do not invent alternatives.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--text-primary",
+    "--text-secondary",
+    "--text-muted"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 24
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

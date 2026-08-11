@@ -1,0 +1,40 @@
+{
+  "id": "SCard",
+  "description": "---",
+  "category": "core",
+  "variants": [
+    "elevated",
+    "filled",
+    "outlined"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "offline"
+  ],
+  "props": [],
+  "aiPrompt": "Surface + 1px border, radius 8\u201312; hover = border shift + optional -2px lift. AI content enters only via the footer slot (AIInsight). No gradients.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--surface-elevated",
+    "--border",
+    "--radius-md",
+    "--card-padding"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

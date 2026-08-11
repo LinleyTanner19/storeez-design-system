@@ -1,0 +1,39 @@
+{
+  "id": "StatTile",
+  "description": "---",
+  "category": "lists",
+  "variants": [
+    "default",
+    "tone"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "empty",
+    "offline"
+  ],
+  "props": [],
+  "aiPrompt": "Stat + delta + trend. Number always mono, never hidden. Delta uses signal colours. Offline shows cached value + synced X ago.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--font-mono",
+    "--success",
+    "--error"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

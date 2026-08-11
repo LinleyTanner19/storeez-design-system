@@ -1,0 +1,37 @@
+{
+  "id": "DataGroup",
+  "description": "DataGroup component",
+  "category": "lists",
+  "variants": [
+    "default"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "empty",
+    "offline"
+  ],
+  "props": [],
+  "aiPrompt": "Sections DataRows under an 11px overline \u2014 never nested.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--border",
+    "--space-sm"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

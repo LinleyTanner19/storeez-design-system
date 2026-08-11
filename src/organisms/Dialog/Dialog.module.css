@@ -1,0 +1,45 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--scrim);
+  padding: 24px;
+}
+
+.panel {
+  width: 100%;
+  max-width: 400px;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.icon {
+  display: inline-flex;
+}
+
+.title {
+  font: 400 22px/28px var(--font-title);
+  color: var(--text-primary);
+}
+
+.body {
+  font: 400 14px/20px var(--font-body);
+  letter-spacing: 0.25px;
+  color: var(--text-secondary);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 4px;
+}

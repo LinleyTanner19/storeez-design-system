@@ -135,7 +135,7 @@
 }
 
 .optionSelected {
-  color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-primary-text);
 }
 
 .optionIcon {
@@ -154,5 +154,5 @@
 .optionCheck {
   display: inline-flex;
   font-size: 14px;
-  color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-primary-text);
 }

@@ -1,0 +1,21 @@
+.tile {
+  flex: 1;
+  padding: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.value {
+  font: 500 16px/22px var(--font-mono);
+  color: var(--text-primary);
+}
+
+.label {
+  font: var(--type-label-small);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 2px;
+}

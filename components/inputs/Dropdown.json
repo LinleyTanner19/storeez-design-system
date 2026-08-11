@@ -1,0 +1,38 @@
+{
+  "id": "Dropdown",
+  "description": "---",
+  "category": "inputs",
+  "variants": [
+    "filled",
+    "outlined"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "success"
+  ],
+  "props": [],
+  "aiPrompt": "6+ options or constrained space. Menu radius --radius-sm.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--surface-elevated",
+    "--radius-sm",
+    "--shadow-md"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

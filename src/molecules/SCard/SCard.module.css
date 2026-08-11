@@ -1,0 +1,29 @@
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--motion-fast), box-shadow var(--motion-fast);
+}
+
+.elevated {
+  background: var(--surface-elevated);
+  box-shadow: var(--shadow-sm);
+}
+
+.brand {
+  background: var(--surface-brand);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  border-color: var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.clickable:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}

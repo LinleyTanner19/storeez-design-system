@@ -1,0 +1,37 @@
+{
+  "id": "BottomNavigation",
+  "description": "BottomNavigation component",
+  "category": "navigation",
+  "variants": [
+    "default",
+    "centered"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "empty"
+  ],
+  "props": [],
+  "aiPrompt": "4 tabs max, safe-area aware; icons + 11px labels; active uses primary-text.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--md-sys-color-primary-text",
+    "--surface"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 56
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

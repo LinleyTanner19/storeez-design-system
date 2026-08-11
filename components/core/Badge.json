@@ -1,0 +1,39 @@
+{
+  "id": "Badge",
+  "description": "---",
+  "category": "core",
+  "variants": [
+    "dot",
+    "number",
+    "icon"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "empty"
+  ],
+  "props": [],
+  "aiPrompt": "Counts in mono. Dot for unread only \u2014 never for risk status.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--md-sys-color-primary",
+    "--error",
+    "--radius-full"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

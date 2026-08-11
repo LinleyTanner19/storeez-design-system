@@ -87,7 +87,7 @@
 
 .elevated {
   background: var(--surface-elevated);
-  color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-primary-text);
   box-shadow: var(--shadow-sm);
 }
 
@@ -107,7 +107,7 @@
 
 .text {
   background: transparent;
-  color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-primary-text);
   padding-left: var(--space-md);
   padding-right: var(--space-md);
 }

@@ -1,0 +1,42 @@
+{
+  "id": "ConfidenceBar",
+  "description": "ConfidenceBar component",
+  "category": "ai",
+  "variants": [
+    "success",
+    "warning",
+    "error"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "ai-thinking",
+    "ai-empty"
+  ],
+  "props": [],
+  "aiPrompt": "Always beside AI output, never optional. Numeric % in mono + bar: \u226570 success, 50\u201369 warning, <50 error.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--success",
+    "--warning",
+    "--error",
+    "--font-mono"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 0,
+    "role": "progressbar"
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

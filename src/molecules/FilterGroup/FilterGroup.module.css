@@ -1,0 +1,36 @@
+.group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: var(--touch-target);
+  padding: 0 16px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-light);
+  background: transparent;
+  color: var(--text-primary);
+  font: 500 14px/1 var(--font-body);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color var(--motion-fast), background var(--motion-fast);
+}
+
+.filter:hover {
+  border-color: var(--border);
+}
+
+.filter:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.selected {
+  border-color: var(--md-sys-color-primary);
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+}

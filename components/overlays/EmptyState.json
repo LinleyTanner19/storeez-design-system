@@ -1,0 +1,38 @@
+{
+  "id": "EmptyState",
+  "description": "Empty/error/AI-empty surface: icon + why + next action. Never a dead end \u2014 every empty state has an action. AI-empty echoes query + 3 alternatives.",
+  "category": "overlays",
+  "variants": [
+    "dashed",
+    "solid"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "empty",
+    "offline"
+  ],
+  "props": [],
+  "aiPrompt": "Icon + why-empty + one action \u2014 never a dead end. AI-empty echoes the query + 3 alternatives.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--border-light",
+    "--radius-md"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": "Progress",
+  "description": "---",
+  "category": "display",
+  "variants": [
+    "linear",
+    "circular",
+    "determinate",
+    "indeterminate"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "success"
+  ],
+  "props": [],
+  "aiPrompt": "Always pair with what's-happening text. Indeterminate escalates to 'still working' after 3s.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--md-sys-color-primary",
+    "--radius-full"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

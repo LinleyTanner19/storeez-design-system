@@ -1,0 +1,39 @@
+{
+  "id": "Switch",
+  "description": "---",
+  "category": "core",
+  "variants": [
+    "off",
+    "on",
+    "loading"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "success"
+  ],
+  "props": [],
+  "aiPrompt": "One option \u2192 Switch, not checkbox. Effect immediate, no submit; loading while persisting.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--md-sys-color-primary",
+    "--radius-full",
+    "--motion-normal"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

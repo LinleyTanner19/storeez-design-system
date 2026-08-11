@@ -1,0 +1,37 @@
+{
+  "id": "SegmentedButton",
+  "description": "---",
+  "category": "actions",
+  "variants": [
+    "single-select",
+    "multi-select"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "success"
+  ],
+  "props": [],
+  "aiPrompt": "2\u20135 options, short labels. Single-select replaces radio rows in toolbars; multi shows a check prefix.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--md-sys-color-primary",
+    "--border"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

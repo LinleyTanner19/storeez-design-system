@@ -1,0 +1,39 @@
+{
+  "id": "Chip",
+  "description": "---",
+  "category": "core",
+  "variants": [
+    "assist",
+    "filter",
+    "input",
+    "suggestion"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "success"
+  ],
+  "props": [],
+  "aiPrompt": "4px radius. Filter chips toggle with check prefix; only input chips are dismissible. Suggestion chips are the AI entry into search.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--md-sys-color-primary-container",
+    "--radius-xs"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

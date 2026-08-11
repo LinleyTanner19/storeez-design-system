@@ -1,0 +1,38 @@
+{
+  "id": "Skeleton",
+  "description": "Skeleton component",
+  "category": "overlays",
+  "variants": [
+    "default"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "empty",
+    "offline"
+  ],
+  "props": [],
+  "aiPrompt": "Mirrors the final layout; shimmer 1.6s; paired with what's-happening text.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--surface-hover"
+  ],
+  "a11y": {
+    "contrast": "exempt-decorative",
+    "touchTarget": 0,
+    "ariaHidden": true,
+    "note": "Skeleton is decorative (aria-hidden). Contrast N/A by design."
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "DataTable",
+  "description": "Dense sortable data grid. Mono for all numeric/data cells. Desktop-primary; on mobile compose as card list (never raw table).",
+  "category": "lists",
+  "variants": [
+    "default",
+    "dense"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "empty",
+    "offline"
+  ],
+  "props": [],
+  "aiPrompt": "Numeric columns right-aligned mono; headers 11px uppercase 0.1em. Sort indicator on the active column only.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--surface",
+    "--border",
+    "--radius-sm"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 40,
+    "sort": "aria-sort"
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

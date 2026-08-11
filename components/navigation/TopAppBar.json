@@ -1,0 +1,39 @@
+{
+  "id": "TopAppBar",
+  "description": "App header: title + subtitle + leading/actions. Sticky on scroll; never animates palette tokens on theme swap.",
+  "category": "navigation",
+  "variants": [
+    "default",
+    "large",
+    "small"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "empty",
+    "offline"
+  ],
+  "props": [],
+  "aiPrompt": "56px, title + back + max 2 actions; icon-only actions limited to house/search/close/back.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--surface",
+    "--border"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

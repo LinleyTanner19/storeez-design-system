@@ -1,0 +1,39 @@
+{
+  "id": "BottomSheet",
+  "description": "Bottom sheet with drag handle, title/subtitle, scrollable content. Mobile-primary; never gesture-only (close button always available).",
+  "category": "overlays",
+  "variants": [
+    "default",
+    "full"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "empty"
+  ],
+  "props": [],
+  "aiPrompt": "Handle bar, drag dismiss, radius 16 top \u2014 the AI overlay's home on touch.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--surface-elevated",
+    "--radius-lg",
+    "--motion-slow"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44,
+    "modal": "aria-modal"
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

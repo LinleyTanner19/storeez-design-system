@@ -1,0 +1,39 @@
+{
+  "id": "NavTab",
+  "description": "NavTab component",
+  "category": "core",
+  "variants": [
+    "default",
+    "active"
+  ],
+  "sizes": [],
+  "states": [
+    "happy",
+    "loading",
+    "disabled",
+    "offline"
+  ],
+  "props": [],
+  "aiPrompt": "Tab inside BottomNavigation/Tabs. Active state uses primary-container pill + primary-text icon; never semantic-red for badge counts.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--md-sys-color-primary-container",
+    "--md-sys-color-primary-text",
+    "--touch-target",
+    "--radius-full"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

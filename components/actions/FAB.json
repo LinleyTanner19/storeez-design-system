@@ -1,0 +1,40 @@
+{
+  "id": "FAB",
+  "description": "---",
+  "category": "actions",
+  "variants": [
+    "regular",
+    "small",
+    "large",
+    "extended"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "happy",
+    "error",
+    "success"
+  ],
+  "props": [],
+  "aiPrompt": "One per screen \u2014 the most important action. Carries the brand seed glow. Extended variant carries a label.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--md-sys-color-primary",
+    "--radius-md",
+    "--shadow-primary"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}
