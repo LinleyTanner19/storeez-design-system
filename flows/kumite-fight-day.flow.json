@@ -1,0 +1,68 @@
+{
+  "id": "kumite-fight-day",
+  "title": "Fight Day — Tournament Operations",
+  "description": "From doors open to results published. The flow that exercises the entire vertical tier: EventCard → BracketTree → Scorecard → FighterCard, with federation scoring authority and offline-first as correctness requirements (venue connectivity is unreliable).",
+  "vertical": "kumite",
+  "personas": ["delphine-event-promoter", "judge-mobile", "kenzi-fighter", "federation-official", "malik-fan"],
+  "trigger": "An event moves to live. The promoter opens the event-day kit; judges get their assigned bouts; spectators get the live bracket.",
+  "flowStates": ["resumable", "queued-offline", "conflict", "submitted"],
+  "surfaces": {
+    "mobile": {
+      "shape": "task-first, one-handed",
+      "rationale": "Judge and promoter are at the venue, one-handed, in front of a crowd. Errors are public and unrecoverable. Scoring must never be lost — offline queue is a correctness requirement.",
+      "steps": ["event-open", "bracket-visible", "assign-judges", "score-bout", "confirm-score", "publish-result"],
+      "target": "per-bout scoring under 60s"
+    },
+    "desktop": {
+      "shape": "overview-first",
+      "rationale": "Federation oversight and promoter management: bracket overview, judge submission counts (0/3→3/3), provisional at 2/3, dispute queue.",
+      "steps": ["event-overview", "bracket-management", "scoring-oversight", "dispute-resolution", "results-publish"],
+      "target": "continuous"
+    },
+    "tablet": {
+      "shape": "scoring, assisted",
+      "rationale": "Judges may use tablet at ringside; present mode lets the crowd see scores. Scorecard legibility at 360px is an open design problem.",
+      "steps": ["bout-view", "score-round", "confirm", "sync-status"],
+      "target": "per-round under 20s"
+    }
+  },
+  "steps": [
+    {
+      "id": "event-open",
+      "purpose": "Set the event live and make it visible.",
+      "components": ["event-card", "status-badge"],
+      "rule": "Live badge pulses red (identity, not risk). Score updates push to spectators. Offline: event opens with cached schedule, sync banner shows."
+    },
+    {
+      "id": "bracket-visible",
+      "purpose": "Show the bracket before and during fights.",
+      "components": ["bracket-tree", "empty-state"],
+      "rule": "Seeded → live (with scores) → complete. Bye handling explicit. Offline: last-synced bracket, unconfirmed fights greyed, 'Scores will sync when reconnected' banner."
+    },
+    {
+      "id": "assign-judges",
+      "purpose": "3 judges per bout from the federation-approved list.",
+      "components": ["list-item", "dropdown", "badge"],
+      "rule": "License verified. Assignment works offline. Judge cannot see others' scores until submit."
+    },
+    {
+      "id": "score-bout",
+      "purpose": "Round-by-round 10-point must scoring.",
+      "components": ["scorecard", "data-row", "data-group"],
+      "rule": "Auto-tally, confirm, signed with judge ID (tamper-evident). Scores in mono always. Offline: 'Scores saved offline. Will sync when connected.'"
+    },
+    {
+      "id": "confirm-score",
+      "purpose": "2/3 provisional, 3/3 confirmed.",
+      "components": ["scorecard", "status-badge", "snackbar"],
+      "rule": "Provisional result shown at 2/3 majority. A judge cannot lose a round — confirm is final for them."
+    },
+    {
+      "id": "publish-result",
+      "purpose": "Result updates fighter records + federation rankings.",
+      "components": ["fighter-card", "data-table", "toast"],
+      "rule": "Winner highlight = primary-text, never red (loss is error-red). Records auto-update W/L/D. Dispute window 30 min."
+    }
+  ],
+  "offlineCorrectness": "Scoring is the highest-stakes flow — a judge cannot lose a round. Every score stores locally before network. Sync conflicts: federation overrides always win."
+}

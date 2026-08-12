@@ -1,0 +1,37 @@
+{
+  "id": "Menu",
+  "description": "Menu component",
+  "category": "core",
+  "variants": [
+    "default"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "empty",
+    "happy",
+    "offline"
+  ],
+  "props": [],
+  "aiPrompt": "Context menu anchored to trigger. Keyboard-first: arrows navigate, esc closes. Destructive items error-red, never for risk status.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--surface-elevated",
+    "--shadow-xl",
+    "--error"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

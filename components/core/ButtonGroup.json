@@ -1,0 +1,36 @@
+{
+  "id": "ButtonGroup",
+  "description": "ButtonGroup component",
+  "category": "core",
+  "variants": [
+    "single-select"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "empty",
+    "happy",
+    "error"
+  ],
+  "props": [],
+  "aiPrompt": "Group of mutually-exclusive actions (segmented). Selected = filled, others = text. Use when 2-4 equal options in a row.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--md-sys-color-primary",
+    "--md-sys-color-primary-text"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

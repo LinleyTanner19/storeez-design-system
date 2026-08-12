@@ -1,0 +1,102 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--motion-fast), box-shadow var(--motion-fast);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  border-color: var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.clickable:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.avatarPlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-hover);
+  color: var(--text-secondary);
+  font: 500 20px/1 var(--font-title);
+}
+
+.identity {
+  flex: 1;
+  min-width: 0;
+}
+
+.rank {
+  font: 500 12px/1.4 var(--font-mono);
+}
+
+.name {
+  font: 500 16px/1.4 var(--font-title);
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nickname {
+  font: 400 12px/1.4 var(--font-body);
+  color: var(--text-secondary);
+}
+
+.streak {
+  font: 500 13px/1.4 var(--font-mono);
+  flex-shrink: 0;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.record {
+  font: 500 14px/1.4 var(--font-mono);
+  color: var(--text-primary);
+  padding: 2px 8px;
+  border-radius: var(--radius-xs);
+  background: var(--surface-hover);
+}
+
+.weightClass {
+  font: var(--type-label-small);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.gym {
+  font: 400 12px/1.4 var(--font-body);
+  color: var(--text-muted);
+  margin-left: auto;
+}

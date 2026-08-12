@@ -1,0 +1,36 @@
+{
+  "id": "BottomAppBar",
+  "description": "BottomAppBar component",
+  "category": "core",
+  "variants": [
+    "default"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "empty",
+    "happy",
+    "offline"
+  ],
+  "props": [],
+  "aiPrompt": "Mobile primary actions: FAB centre + up to 4 icon actions. Never overflow; badges in mono.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--surface",
+    "--border"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+.track {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  padding: 8px 0;
+}
+
+.belt {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: var(--radius-full);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  background: var(--surface-hover);
+  border: 2px solid var(--border);
+}
+
+.dotPassed {
+  background: var(--belt-color, var(--md-sys-color-primary));
+  border-color: var(--belt-color, var(--md-sys-color-primary));
+}
+
+.name {
+  font: 500 12px/1.4 var(--font-body);
+  color: var(--text-secondary);
+}
+
+.current {
+  color: var(--text-primary);
+}
+
+.next {
+  font: 400 12px/1.4 var(--font-body);
+  color: var(--text-muted);
+  margin-left: 8px;
+}

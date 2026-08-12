@@ -1,0 +1,39 @@
+{
+  "id": "DatePicker",
+  "description": "DatePicker component",
+  "category": "core",
+  "variants": [
+    "single",
+    "range"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "empty",
+    "happy",
+    "error",
+    "offline"
+  ],
+  "props": [],
+  "aiPrompt": "Calendar selection. Range mode picks start+end. Today outlined, selected = primary fill. Data in mono.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--md-sys-color-primary",
+    "--md-sys-color-primary-container",
+    "--font-mono"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

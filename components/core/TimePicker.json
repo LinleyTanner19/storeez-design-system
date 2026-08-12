@@ -1,0 +1,39 @@
+{
+  "id": "TimePicker",
+  "description": "TimePicker component",
+  "category": "core",
+  "variants": [
+    "12h",
+    "24h"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "empty",
+    "happy",
+    "error",
+    "offline"
+  ],
+  "props": [],
+  "aiPrompt": "Time selection via clock dial. Hours then minutes; AM/PM when 12h. Values in mono.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--md-sys-color-primary",
+    "--md-sys-color-primary-container",
+    "--font-mono"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

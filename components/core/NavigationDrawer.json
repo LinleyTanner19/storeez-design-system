@@ -1,0 +1,37 @@
+{
+  "id": "NavigationDrawer",
+  "description": "NavigationDrawer component",
+  "category": "core",
+  "variants": [
+    "modal"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "empty",
+    "happy",
+    "offline"
+  ],
+  "props": [],
+  "aiPrompt": "App-level navigation. Drawer opens over content with scrim; close on backdrop/esc. Items = NavTab rows.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--surface",
+    "--scrim",
+    "--shadow-xl"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

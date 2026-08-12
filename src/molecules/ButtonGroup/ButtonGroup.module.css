@@ -1,0 +1,9 @@
+.group {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.item {
+  flex: 1;
+  min-width: 0;
+}

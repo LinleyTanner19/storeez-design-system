@@ -1,0 +1,36 @@
+{
+  "id": "NavigationRail",
+  "description": "NavigationRail component",
+  "category": "core",
+  "variants": [
+    "default"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "empty",
+    "happy",
+    "offline"
+  ],
+  "props": [],
+  "aiPrompt": "Desktop/tablet persistent navigation. Icons + labels in 72px rail; top slot for FAB, bottom for avatar.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--surface",
+    "--border"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

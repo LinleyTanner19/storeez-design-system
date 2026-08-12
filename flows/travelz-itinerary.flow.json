@@ -1,0 +1,62 @@
+{
+  "id": "travelz-itinerary",
+  "title": "Trip Itinerary — Build and Day-of",
+  "description": "From trip creation to day-of navigation. Proves cross-vertical resolution: the SAME transversal core (SCard, ListItem, Chip, EmptyState, AIInsight) composes into a Travelz domain flow — no core changes needed.",
+  "vertical": "travelz",
+  "personas": ["leisure-traveller", "family-planner", "solo-adventurer"],
+  "trigger": "A traveller creates or opens a trip itinerary.",
+  "flowStates": ["resumable", "queued-offline", "edited-offline", "synced"],
+  "surfaces": {
+    "mobile": {
+      "shape": "day-led, thumb-reachable",
+      "rationale": "The traveller is on the ground, one-handed, often offline (island connectivity). The itinerary is a reference, not a form — glanceable times, transport chips, one tap to act.",
+      "steps": ["trip-open", "day-view", "stop-detail", "navigate", "add-activity"],
+      "target": "glance-under-10s per stop"
+    },
+    "desktop": {
+      "shape": "planning-first",
+      "rationale": "Building the itinerary is desktop work: drag stops, compare transport, see the whole week.",
+      "steps": ["trip-create", "itinerary-build", "transport-compare", "share"],
+      "target": "continuous"
+    },
+    "tablet": {
+      "shape": "split-view, presentable",
+      "rationale": "Couple or family planning together; also presentation to a partner.",
+      "steps": ["itinerary-build", "day-view", "share"],
+      "target": "continuous"
+    }
+  },
+  "steps": [
+    {
+      "id": "trip-open",
+      "purpose": "Open the trip; show the next day's plan.",
+      "components": ["policy-card", "list-item"],
+      "rule": "Next activity is the hero. Times in mono. Offline: full itinerary cached, 'synced 2h ago' indicator."
+    },
+    {
+      "id": "day-view",
+      "purpose": "The day's stops in order.",
+      "components": ["list-item", "chip", "data-row"],
+      "rule": "Transport type as chips between stops. Times in mono. A day with no plans shows empty-state: 'Nothing planned — add an activity or explore.'"
+    },
+    {
+      "id": "stop-detail",
+      "purpose": "One stop: what, when, how to get there.",
+      "components": ["s-card", "document-row", "ai-insight"],
+      "rule": "AI suggestions (nearby alternatives) use AIInsight: what/why/confidence/override/disclaimer. Never silently rewrites the itinerary."
+    },
+    {
+      "id": "navigate",
+      "purpose": "Get from one stop to the next.",
+      "components": ["offline-banner", "photo-upload"],
+      "rule": "Offline is first-class: cached map, directions queued. Connectivity on islands is the norm, not the exception."
+    },
+    {
+      "id": "add-activity",
+      "purpose": "Insert a new stop mid-trip.",
+      "components": ["empty-state", "ai-insight", "money-input"],
+      "rule": "Edited offline is legal — the itinerary merges on reconnect with conflict markers. AI suggestions are additions, never replacements."
+    }
+  ],
+  "offlineCorrectness": "The itinerary must work in full offline (island reality). Every edit stores locally; conflicts surface as markers, never silent overwrites. AI never edits — it proposes."
+}

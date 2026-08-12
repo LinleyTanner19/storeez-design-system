@@ -1,0 +1,36 @@
+{
+  "id": "SearchView",
+  "description": "SearchView component",
+  "category": "core",
+  "variants": [
+    "fullscreen"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "empty",
+    "happy",
+    "ai-empty"
+  ],
+  "props": [],
+  "aiPrompt": "Full-screen search. Recents before query; results after. AI-empty: echo query + 3 alternatives, never dead-end.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--bg",
+    "--md-sys-color-primary-text"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}

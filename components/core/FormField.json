@@ -1,0 +1,39 @@
+{
+  "id": "FormField",
+  "description": "FormField component",
+  "category": "core",
+  "variants": [
+    "default",
+    "error"
+  ],
+  "sizes": [],
+  "states": [
+    "loading",
+    "empty",
+    "happy",
+    "error",
+    "offline"
+  ],
+  "props": [],
+  "aiPrompt": "Wraps a TextField/control with label, helper, and error messaging. Required marker. Error copy states the problem + fix.",
+  "mediums": [
+    "pwa",
+    "web",
+    "native"
+  ],
+  "tokens": [
+    "--text-secondary",
+    "--text-muted",
+    "--error"
+  ],
+  "a11y": {
+    "contrast": "AA",
+    "touchTarget": 44
+  },
+  "offline": {
+    "behaviour": "cached + synced X ago",
+    "states": [
+      "offline"
+    ]
+  }
+}
